@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/QJAlert.css">
+    <script src="script/QJAlert-dev.js"></script>
+</head>
+
+<body>
+    <h1 style="width: 500px; margin:0 auto;">全景视觉 alert 实例</h1>
+    <h3>1.弹窗</h3>
+    <h4 style="color: blueviolet">代码：</h4>
+    <pre style="background-color: #DADADA;margin-left: 10px;margin-right: 30px;border-radius: 10px;">
+            <code style="font-family:'微软雅黑';font-weight:bold;">
+                    qjalert('文本');//替代alert();
+            </code>
+    </pre>
+    <div style="width: 150px;margin:0 auto;"><button id="alert" onclick="qjalert('弹窗');">演示效果</button></div>
+    <h3>2.弹窗(带标题)</h3>
+    <h4 style="color: blueviolet">代码：</h4>
+    <pre style="background-color: #DADADA;margin-left: 10px;margin-right: 30px;border-radius: 10px;">
+            <code style="font-family:'微软雅黑';font-weight:bold;">
+                    qjalert('这是标题！','这是文本');
+            </code>
+    </pre>
+    <div style="width: 150px;margin:0 auto;"><button id="alert" onclick="qjalert('这是标题！','这是文本');">演示效果</button></div>
+    <h3>3.弹窗(成功的提示)</h3>
+    <h4 style="color: blueviolet">代码：</h4>
+    <pre style="background-color: #DADADA;margin-left: 10px;margin-right: 30px;border-radius: 10px;">
+            <code style="font-family:'微软雅黑';font-weight:bold;">
+                    qjalert('这还是标题！','这还是文本','success');
+            </code>
+    </pre>
+    <div style="width: 150px;margin:0 auto;"><button id="alert" onclick="qjalert('这还是标题！','这还是文本','success');">演示效果</button></div>
+    <h3>4.弹窗(带函数传值的alert)</h3>
+    <h4 style="color: blueviolet">代码：</h4>
+    <pre style="background-color: #DADADA;margin-left: 10px;margin-right: 30px;border-radius: 10px;">
+            <code style="font-family:'微软雅黑';font-weight:bold;">
+                    qjalert({ 
+                        title: '确定删除吗？', 
+                        text: '你将无法恢复该虚拟文件！', 
+                        type: 'warning',
+                        showCancelButton: true, 
+                        confirmButtonColor: '#DD6B55',
+                        confirmButtonText: '确定删除！', 
+                        cancelButtonText: '取消删除！',
+                        closeOnConfirm: false, 
+                        closeOnCancel: false	
+                        },
+                        function(isConfirm){ 
+                        if (isConfirm) { 
+                            qjalert('删除！', '你的虚拟文件已经被删除。',
+                        'success'); 
+                        } else { 
+                            qjalert('取消！', '你的虚拟文件是安全的:)',
+                        'error'); 
+                        } 
+                        });
+            </code>
+    </pre>
+    <div style="width: 150px;margin:0 auto;"><button id="alert" onclick="qjalert({ title: '确定删除吗？', text: '你将无法恢复该虚拟文件！', type: 'warning',showCancelButton: true, confirmButtonColor: '#DD6B55',confirmButtonText: '确定删除！', cancelButtonText: '取消删除！',closeOnConfirm: false, closeOnCancel: false	},function(isConfirm){ if (isConfirm) { qjalert('删除！', '你的虚拟文件已经被删除。','success'); } else { qjalert('取消！', '你的虚拟文件是安全的:)','error'); } });">演示效果</button></div>
+    <h3>5.弹窗(自定义文本)</h3>
+    <h4 style="color: blueviolet">代码：</h4>
+    <pre style="background-color: #DADADA;margin-left: 10px;margin-right: 30px;border-radius: 10px;">
+            <code style="font-family:'微软雅黑';font-weight:bold;">
+                    qjalert({ 
+                        title: 'HTML <small>标题</small>!',
+                        text: '自定义<span style=\'color:#0000FF\'>这是蓝色的<span>。', 
+                        html: true 
+                    });
+            </code>
+    </pre>
+    <div style="width: 150px;margin:0 auto;"><button id="alert" onclick="qjalert({ title: 'HTML <small>标题</small>!',text: '自定义<span style=\'color:#0000FF\'>这是蓝色的<span>。', html: true });">演示效果</button></div>
+</body>
